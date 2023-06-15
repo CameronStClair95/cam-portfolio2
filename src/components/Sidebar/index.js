@@ -29,7 +29,7 @@ const Sidebar = () => (
         activeClassName="active"
         className="portfolio-link"
         to="/Portfolio"
-        // data-label="Contact"
+        data-label="Portfolio"
       >
         <FontAwesomeIcon icon={faSuitcase} color="#4d4d4e" />
       </NavLink>
