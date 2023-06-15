@@ -1,9 +1,14 @@
 import React from 'react'
+import './index.scss'
 
 
 const Portfolio= () => {
     return (
-        <div>Hello world</div> 
+        <div className='container portfolio-page '>
+            
+           <h1 className='page-title'> Portfolio </h1> 
+            
+            </div> 
     )
     
 }
