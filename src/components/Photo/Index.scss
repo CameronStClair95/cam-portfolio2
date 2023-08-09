@@ -23,8 +23,8 @@
 
 .profile-pic {
     position: relative; 
-    width: 25%;  
-    height: 50%;
+    width: 22%;  
+    height: 90%;
     object-fit: cover;
     animation: float 2s ease-in-out infinite, colorChange 10s ease-in-out infinite;
     border-radius: 50%;
@@ -32,6 +32,7 @@
     box-shadow: 0px 0px 0px 7px rgba(0, 0, 0, 0.2);
     margin-top: 2.5%;
     margin-left: -40%;  
+    
     margin-bottom: 2.5%;
     margin-right: 2.5%;
     transform: translate(-50%, -50%);
