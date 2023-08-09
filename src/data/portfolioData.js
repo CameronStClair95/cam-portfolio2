@@ -6,19 +6,22 @@ export const portfolio = [
   {
     name: "Fallout Game",
     img: falloutQuizImg,
-    description: "Designed and developed an interactive JavaScript quiz application...",
-    url: "https://cameronstclair95.github.io/Fallout-Game-Ironhack-Project-1/"
+    description: "Basic JavaScript",
+    url: "https://cameronstclair95.github.io/Fallout-Game-Ironhack-Project-1/",
+    github: "https://github.com/CameronStClair95/Fallout-Game-Ironhack-Project-1" 
   },
   {
     name: "Globe Hopper",
     img: globeHopperImg,
-    description: "Built an efficient travel management web app...",
-    url: "https://cameronstclair95.github.io/Fallout-Game-Ironhack-Project-1/"
+    description: "Node.js, Express, MongoDB, and EJS (Handle Bars)",
+    url: "https://globehopper.cyclic.app/",
+    github: "https://github.com/labarr-bell/project-2" 
   },
   {
     name: "Macartsy",
     img: macArtsyImg,
-    description: "Launched Macartsy, a MERN stack platform connecting art enthusiasts...",
-    url: "https://cameronstclair95.github.io/Fallout-Game-Ironhack-Project-1/"
+    description: "MERN stack",
+    url: "https://macartsy.netlify.app/",
+    github: "https://github.com/CameronStClair95/my-artsy-app-client" 
   }
 ];

@@ -1,6 +1,15 @@
-import './index.scss'
+// React-related imports
+import { useEffect, useState } from 'react'
+
+// Component imports
 import AnimatedLetters from '../AnimatedLetters'
-import { useEffect, useState } from 'react';
+import Loader from 'react-loaders'
+
+// Style imports
+import './index.scss'
+
+// Icons
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faNodeJs,
   faCss3,
@@ -9,86 +18,91 @@ import {
   faJsSquare,
   faReact,
 } from '@fortawesome/free-brands-svg-icons'
-import Loader from 'react-loaders'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-
 
 const About = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
+  const [animationState, setAnimationState] = useState('text-animate')
+
+  console.log("About component initialized"); // Initial log
 
   useEffect(() => {
+    console.log("useEffect triggered for animationState setup"); // Log when useEffect runs
+
     const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover')
+      console.log("Setting animationState to 'text-animate-hover'"); // Log before state change
+      setAnimationState('text-animate-hover')
     }, 3000)
 
     return () => {
+      console.log("Cleaning up timer"); // Log for cleanup
       clearTimeout(timer)
     }
   }, [])
 
+  const techIcons = [
+    { icon: faNodeJs, color: '#DD0031' },
+    { icon: faHtml5, color: '#F06529' },
+    { icon: faCss3, color: '#28A4D9' },
+    { icon: faReact, color: '#5ED4F4' },
+    { icon: faJsSquare, color: '#EFD81D' },
+    { icon: faGitAlt, color: '#EC4D28' },
+  ]
+
+  console.log("Rendering About component with animationState:", animationState); // Log during render
+
   return (
-    <>
-    <div className="container about-page">
-      <div className="text-zone">
+    <main className="container about-page">
+      <section className="text-zone">
         <h1>
           <AnimatedLetters
-            letterClass={letterClass}
+            letterClass={animationState}
             strArray={['A', 'b', 'o', 'u', 't', ' ', 'm', 'e']}
             idx={15}
           />
         </h1>
         <p>
-          I'm a passionate UI/UX designer transitioning into front-end
-          development with a keen interest in both the aesthetics and mechanics
-          of web design. I strive to create seamless and visually appealing
-          interfaces that not only meet the user's needs but also create a
-          delightful user experience.
+          I am an ambitious Frontend Developer pivoting into the world of web
+          development, with a profound appreciation for the intricacies 
+          <br />
+          and artistry inherent in web design. My aim is to craft impeccable and
+          aesthetically pleasing interfaces that not only cater to the 
+          <br />
+          user's desires but also elevate their online experience to new heights.
         </p>
         <br />
         <p>
-          I'm a lifelong learner, driven by my curiosity about the latest trends
-          in technology and how they can be used to solve real-world problems.
-          This perpetual thirst for knowledge keeps me on my toes, pushing my
-          boundaries, and consistently improving my technical skills.
+          At the core, I am an ever-eager scholar, perpetually driven by the allure of
+          the newest technological innovations and their potential applications in 
+          <br />
+          addressing tangible challenges. This unwavering quest for understanding propels me 
+          forward, continually expanding my horizons  
+          <br />
+          and refining my toolkit, with a particular emphasis lately on UX/UI and Product Management.
         </p>
         <br />
         <p>
-          To sum me up in a single sentence - I am a technology enthusiast, an
-          ardent music lover, a passionate photographer, an expressive painter,
-          and an artist. My diverse interests fuel my creativity, broadening my
-          perspective, which I believe, translates into my unique approach to
-          web design and development.
+          If one were to encapsulate my essence in a succinct statement - I stand as a fervent advocate for technology, 
+          <br />
+          a devoted aficionado of melodies, a keen-eyed photographer, a spirited painter, and at heart, a truly curious person. My eclectic  
+          <br />
+          range of passions ignites my imagination, providing a rich tapestry of perspectives that, I am confident, endows me with a distinct 
+          <br/>
+          edge in web design and the broader tech industry.
         </p>
-      </div>
+      </section>
 
-      <div className="stage-cube-cont">
-          <div className="cubespinner">
-            <div className="face1">
-              <FontAwesomeIcon icon={faNodeJs} color="#DD0031" />
+      <section className="stage-cube-cont">
+        <div className="cubespinner">
+          {techIcons.map((tech, idx) => (
+            <div key={idx} className={`face${idx + 1}`}>
+              <FontAwesomeIcon icon={tech.icon} color={tech.color} />
             </div>
-            <div className="face2">
-              <FontAwesomeIcon icon={faHtml5} color="#F06529" />
-            </div>
-            <div className="face3">
-              <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
-            </div>
-            <div className="face4">
-              <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
-            </div>
-            <div className="face5">
-              <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />
-            </div>
-            <div className="face6">
-              <FontAwesomeIcon icon={faGitAlt} color="#EC4D28" />
-            </div>
-          </div>
+          ))}
         </div>
-      </div>
+      </section>
+
       <Loader type="pacman" />
-    </>
+    </main>
   )
 }
-
 
 export default About

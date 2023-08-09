@@ -4,143 +4,168 @@ html, body {
   padding: 0;
 }
 
+.container.contact-page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .text-zone {
+    flex: 1;
+    margin-right: 2%; 
+  }
+
+  .info-map,
+  .map-wrap {
+    width: 48%; 
+  }
+
+  @media screen and (max-width: 768px) { 
+    .text-zone,
+    .info-map,
+    .map-wrap {
+      width: 100%; 
+      margin-right: 0;
+    }
+  }
+}
+
 .contact-form {
-    width: 100%;
-    margin-top: 20px;
-  
-    ul {
+  width: 100%;
+  margin-top: 20px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
       padding: 0;
       margin: 0;
-  
-      li {
-        padding: 0;
-        margin: 0;
-        list-style: none;
-        margin-bottom: 10px;
-        opacity: 0;
-        overflow: hidden;
-        display: block;
-        clear: both;
-        position: relative;
-        animation: fadeInUp 2s 2s;
-        animation-fill-mode: forwards;
-      }
-  
-      li.half {
-        width: 49%;
-        margin-left: 2%;
-        float: left;
-        clear: none;
-  
-        &:first-child {
-          margin-left: 0;
-        }
-      }
+      list-style: none;
+      margin-bottom: 10px;
+      opacity: 0;
+      overflow: hidden;
+      display: block;
+      clear: both;
+      position: relative;
+      animation: fadeInUp 2s 2s;
+      animation-fill-mode: forwards;
     }
-  
-    input[type='text'],
-    input[type='email'] {
-      width: 100%;
-      border: 0;
-      background: #D8C3A5;
-      height: 50px;
-      font-size: 16px;
-      color: #e85a4f; 
-      padding: 0 20px;
-      box-sizing: border-box;
-    }
-  
-    textarea {
-      width: 100%;
-      border: 0;
-      background: #D8C3A5;
-      height: 50px;
-      font-size: 16px;
-      color:#e85a4f; 
-      padding: 20px;
-      box-sizing: border-box;
-      min-height: 150px;
-    }
-  
-    .flat-button {
-      color: #e98074; 
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-decoration: none;
-      padding: 8px 10px;
-      border: 1px solid #e98074; 
+
+    li.half {
+      width: 49%;
+      margin-left: 2%;
       float: left;
-      border-radius: 4px;
-      background: 0 0;
-      text-transform: uppercase;
-      float: right;
-      text-align: center;
-      margin-right: 10px;
+      clear: none;
 
-      &:hover {
-        color: #fff;
-        background-color: #e98074;
-        cursor: pointer;
-    }
-}
-  }
-  
-  .map-wrap {
-    float: right;
-    width: 53%;
-    height: 100vh;
-    z-index: 9999; /* add this line */
-    position: relative; /* add this line if not already present */
-  }
-  
-  .leaflet-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    animation: backInRight 1s 1.2s;
-    animation-fill-mode: forwards;
-  }
-  
-  .info-map {
-    position: absolute;
-    background: #D8C3A5; 
-    top: 50px;
-    right: 30%;
-    z-index: 999999;
-    width: 267px;
-    padding: 20px;
-    color: #EAE7DC; 
-    font-family: 'Helvetica';
-    font-size: 17px;
-    font-weight: 300;
-    opacity: 0;
-    animation: fadeIn 1s 1.5s;
-    animation-fill-mode: forwards;
-  
-    span {
-      font-size: 16px;
-  
-      span {
-        color: #e85a4f; 
+      &:first-child {
+        margin-left: 0;
       }
     }
   }
-  
-  @media screen and (max-width: 1200px) {
-    .map-wrap {
-      float: none;
-      margin: 0;
-      width: 100%;
-      height: 400px;
-    }
-  
-    .info-map {
-      display: none;
-    }
+
+  input[type='text'],
+  input[type='email'] {
+    width: 100%;
+    border: 0;
+    background: #D8C3A5;
+    height: 50px;
+    font-size: 16px;
+    color: #e85a4f;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
 
-  input[type='text']::placeholder,
+  textarea {
+    width: 100%;
+    border: 0;
+    background: #D8C3A5;
+    height: 50px;
+    font-size: 16px;
+    color: #e85a4f;
+    padding: 20px;
+    box-sizing: border-box;
+    min-height: 150px;
+  }
+
+  .flat-button {
+    color: #e98074;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    padding: 8px 10px;
+    border: 1px solid #e98074;
+    float: left;
+    border-radius: 4px;
+    background: 0 0;
+    text-transform: uppercase;
+    float: right;
+    text-align: center;
+    margin-right: 10px;
+
+    &:hover {
+      color: #fff;
+      background-color: #e98074;
+      cursor: pointer;
+    }
+  }
+}
+
+.map-wrap {
+  float: right;
+  width: 53%;
+  height: 100vh;
+  z-index: 1;
+  position: relative;
+}
+
+.leaflet-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  animation: backInRight 1s 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.info-map {
+  position: absolute;
+  background: #D8C3A5;
+  top: 50px;
+  right: 30%;
+  z-index: 999999;
+  width: 267px;
+  padding: 20px;
+  color: #e85a4f;;
+  font-family: 'Helvetica';
+  font-size: 17px;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeIn 1s 1.5s;
+  animation-fill-mode: forwards;
+
+  span {
+    font-size: 16px;
+
+    span {
+      color: #e85a4f;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .map-wrap {
+    float: none;
+    margin: 0;
+    width: 100%;
+    height: 400px;
+  }
+
+  .info-map {
+    display: none;
+  }
+}
+
+input[type='text']::placeholder,
 input[type='email']::placeholder,
 input[type='text']::-webkit-input-placeholder,
 input[type='email']::-webkit-input-placeholder,
@@ -148,18 +173,65 @@ input[type='text']::-moz-placeholder,
 input[type='email']::-moz-placeholder,
 input[type='text']:-ms-input-placeholder,
 input[type='email']:-ms-input-placeholder {
-  color: #e85a4f; 
+  color: #e85a4f;
 }
 
 textarea::placeholder,
 textarea::-webkit-input-placeholder,
 textarea::-moz-placeholder,
 textarea:-ms-input-placeholder {
-  color: #e85a4f; 
+  color: #e85a4f;
 }
-  
 
-  /* 
+.map-wrap,
+.contact-form {
+  z-index: 1;
+}
+
+.notification-modal {
+  position: relative;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background: #D8C3A5;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 0 10px #EAE7DC;
+  z-index: 100000;
+
+  h2 {
+    color: #e85a4f;
+  }
+
+  button {
+    background-color: #e98074;
+    color: #EAE7DC;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #e85a4f;
+    }
+  }
+
+  input[type='text'],
+input[type='email'],
+textarea {
+  &::placeholder,
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder {
+    $accent-color: #e85a4f; 
+
+  }
+}
+}
+
+/* 
 #EAE7DC
 #D8C3A5
 #8E8D8A

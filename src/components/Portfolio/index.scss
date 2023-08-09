@@ -1,58 +1,219 @@
+$primary-color: #eae7dc;
+$secondary-color: #d8c3a5;
+$tertiary-color: #8e8d8a;
+$highlight-color: #e98074;
+$accent-color: #e85a4f;
+
 .portfolio-page {
   padding-left: 100px;
   padding-right: 50px;
-  width: calc(100% - 150px);
+  width: calc(100% - 200px);
   position: initial;
   height: 100%;
   overflow: auto;
 
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% - 40px);
+  }
+
   h1.page-title {
-    margin-left: 100px;
+    margin-left: 10px;
     margin-top: 100px;
+
+    @media (max-width: 768px) {
+      margin-left: 20px;
+      font-size: 28px;
+    }
   }
 
-  .images-container {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    padding-bottom: 100px;
+  .page-description {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: $accent-color;
+
+    @media (max-width: 768px) {
+      font-size: 28px;
+    }
+  }
+}
+
+.images-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding-bottom: 100px;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.portfolio-img-box {
+  position: relative;
+  flex: 1 1 20%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  max-width: calc(25% - 10px);
+
+  @media (max-width: 768px) {
+    max-width: calc(50% - 10px);
   }
 
-  .portfolio-img-box {
-    position: relative;
-    flex: 1 1 20%;
-    height: 400px;
-    overflow: hidden;
+  @media (max-width: 480px) {
+    max-width: 100%;
+  }
+
+  .portfolio-Image {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    z-index: 2;
+    object-fit: cover;
     border-radius: 10px;
-    max-width: calc(25% - 10px);
-
-    .portfolio-Image {
-      max-width: 100%;
-      max-height: 100%;
-      position: absolute;
-      z-index: 2;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .content {
-      position: absolute;
-      width: 100%;
-      z-index: 3;
-      padding: 10px 30px;
-      transition: all 0.3s cubic-bezier(0.645, 0.045, 0.0355, 1);
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1));
-      //   bottom: -70px
-    }
-   
-    .name{
-        margin-bottom: 0;
-        margin-top: 0;
-        color: #fff;
-        font-size: 24px;
-        font-weight: 500px;
-        line-height: 24px;
-    }
-    
   }
+
+  .content {
+    position: absolute;
+    width: 100%;
+    z-index: 4;
+    padding: 10px 30px;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.0355, 1);
+    background: linear-gradient(360deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1));
+
+  }
+
+  .name {
+    margin-bottom: 0;
+    margin-top: 0;
+    color: $primary-color;
+    font-size: 24px;
+    font-weight: 500px;
+    line-height: 24px;
+  }
+
+  .description {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    color: $accent-color !important;
+  }
+
+  .btn {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 0 23px;
+    height: 40px;
+    line-height: 34px;
+    border: 2px solid;
+    border-radius: 4px;
+    font-size: 14px;
+    color: $highlight-color;
+    background: transparent;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      background: $primary-color;
+      color: $accent-color;
+      border-color: $tertiary-color;
+    }
+  }
+
+  &:after {
+    content: '';
+    background: linear-gradient(180deg, $accent-color, $secondary-color);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.0355, 1);
+    opacity: 0;
+  }
+
+  &:hover:after {
+    opacity: 0.85;
+    color: $secondary-color;
+  }
+
+  &:hover .content {
+    bottom: 0;
+    background: transparent;
+  }
+}
+
+.modal-content {
+  position: relative;
+  background: $primary-color;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 70%; // Adjust the width as needed
+  max-height: 80vh; // This ensures the modal takes up a maximum of 80% of the viewport height
+  margin: 10% auto; // This centers the modal vertically
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: auto; // This will add a scrollbar if the content inside the modal is too tall
+  font-size: 20px;
+  color: $accent-color;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; // This will center most of the content
+
+  button {
+    margin: 10px; // Add some margin around buttons
+  }
+}
+
+img {
+  max-width: 100%;
+  max-height: 400px; // You can adjust this value as needed
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h3 {
+  margin-top: 0;
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: $accent-color;
+  color: $primary-color;
+  cursor: pointer;
+  transition: background 0.3s;
+
+  &:hover {
+    background: $highlight-color;
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: $tertiary-color;
+}
+
+p {
+  color: $accent-color !important;
+  font-size: 18px;
+  font-weight: 50px;
 }
