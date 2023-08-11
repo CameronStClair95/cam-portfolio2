@@ -1,36 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import Loader from 'react-loaders';
-import Modal from 'react-modal';
-import './index.scss';
-import AnimatedLetters from '../AnimatedLetters';
-import { portfolio } from '../../data/portfolioData';
+import React, { useState, useEffect } from 'react'
+import Loader from 'react-loaders'
+import Modal from 'react-modal'
+import './index.scss'
+import AnimatedLetters from '../AnimatedLetters'
+import { portfolio } from '../../data/portfolioData'
 
-Modal.setAppElement('#root'); // For accessibility reasons
+Modal.setAppElement('#root')
 
 const Portfolio = () => {
-  const [letterClass, setLetterClass] = useState('text-animate');
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentProject, setCurrentProject] = useState(null);
+  const [letterClass, setLetterClass] = useState('text-animate')
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [currentProject, setCurrentProject] = useState(null)
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover');
-    }, 3000);
+      setLetterClass('text-animate-hover')
+    }, 3000)
 
     return () => {
-      clearTimeout(timer);
-    };
-  }, []);
+      clearTimeout(timer)
+    }
+  }, [])
 
   const handleViewClick = (project) => {
-    setCurrentProject(project);
-    setIsModalOpen(true);
-  };
+    setCurrentProject(project)
+    setIsModalOpen(true)
+  }
 
   const closeModal = () => {
-    setIsModalOpen(false);
-    setCurrentProject(null);
-  };
+    setIsModalOpen(false)
+    setCurrentProject(null)
+  }
 
   const renderPortfolio = (portfolio) => {
     return (
@@ -40,7 +40,7 @@ const Portfolio = () => {
             <img src={port.img} className="portfolio-Image" alt={port.name} />
             <div className="content">
               <h3 className="name">{port.name}</h3>
-              <br/>
+              <br />
               <p className="description">{port.description}</p>
               <button className="btn" onClick={() => handleViewClick(port)}>
                 View
@@ -49,8 +49,8 @@ const Portfolio = () => {
           </article>
         ))}
       </div>
-    );
-  };
+    )
+  }
 
   return (
     <main className="container portfolio-page">
@@ -64,25 +64,35 @@ const Portfolio = () => {
       <h2 className="page-description">Web Development Projects</h2>
       <br />
       <section>{renderPortfolio(portfolio)}</section>
-      <Modal isOpen={isModalOpen} onRequestClose={closeModal} className="modal-content">
+      <Modal
+        isOpen={isModalOpen}
+        onRequestClose={closeModal}
+        className="modal-content"
+      >
         {currentProject && (
           <>
-            <button className="close-button" onClick={closeModal}>&times;</button>
+            <button className="close-button" onClick={closeModal}>
+              &times;
+            </button>
             <img src={currentProject.img} alt={currentProject.name} />
             <h3>{currentProject.name}</h3>
-            <br/>
+            <br />
             <p>{currentProject.description}</p>
-            <br/>
-            <button onClick={() => window.open(currentProject.url)}>View Project</button>
+            <br />
+            <button onClick={() => window.open(currentProject.url)}>
+              View Project
+            </button>
             {currentProject.github && (
-              <button onClick={() => window.open(currentProject.github)}>View on GitHub</button>
+              <button onClick={() => window.open(currentProject.github)}>
+                View on GitHub
+              </button>
             )}
           </>
         )}
       </Modal>
       <Loader type="pacman" />
     </main>
-  );
-};
+  )
+}
 
-export default Portfolio;
+export default Portfolio
