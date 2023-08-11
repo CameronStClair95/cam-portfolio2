@@ -1,36 +1,43 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { FaHtml5, FaCss3, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa';
-import { DiJavascript } from 'react-icons/di';
-import AnimatedLetters from '../AnimatedLetters';
-import profilePic from '../../assets/images/LinkedIn Profile Pic.jpeg';
-import './index.scss';
-import '../Photo/Index.scss';
-import Loader from 'react-loaders';
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FaHtml5, FaCss3, FaReact, FaNodeJs, FaGitAlt } from 'react-icons/fa'
+import { DiJavascript } from 'react-icons/di'
+import { SiMongodb } from 'react-icons/si'
+import AnimatedLetters from '../AnimatedLetters'
+import profilePic from '../../assets/images/LinkedIn Profile Pic.jpeg'
+import './index.scss'
+import '../Photo/Index.scss'
+import Loader from 'react-loaders'
 
 const Home = () => {
-  const [letterClass, setLetterClass] = useState('text-animate');
-  const firstNameArray = [' ', 'C', 'a', 'm', 'e', 'r', 'o', 'n'];
-  const lastNameArray = ['S', 't', ' ', 'C', 'l', 'a', 'i', 'r'];
-  const jobArray = ['W', 'e', 'b', ' ', 'D', 'e', 'v', 'e', 'l', 'o', 'p', 'e', 'r'];
-
-  console.log("Home component initialized"); // Initial log
+  const [letterClass, setLetterClass] = useState('text-animate')
+  const firstNameArray = [' ', 'C', 'a', 'm', 'e', 'r', 'o', 'n']
+  const lastNameArray = ['S', 't', ' ', 'C', 'l', 'a', 'i', 'r']
+  const jobArray = [
+    'W',
+    'e',
+    'b',
+    ' ',
+    'D',
+    'e',
+    'v',
+    'e',
+    'l',
+    'o',
+    'p',
+    'e',
+    'r',
+  ]
 
   useEffect(() => {
-    console.log("useEffect triggered for letterClass setup"); // Log when useEffect runs
-
     const timer = setTimeout(() => {
-      console.log("Setting letterClass to 'text-animate-hover'"); // Log before state change
-      setLetterClass('text-animate-hover');
-    }, 4000);
+      setLetterClass('text-animate-hover')
+    }, 4000)
 
     return () => {
-      console.log("Cleaning up timer"); // Log for cleanup
-      clearTimeout(timer);
-    };
-  }, []);
-
-  console.log("Rendering Home component with letterClass:", letterClass); // Log during render
+      clearTimeout(timer)
+    }
+  }, [])
 
   return (
     <>
@@ -42,11 +49,23 @@ const Home = () => {
             <br />
             <span className={`${letterClass} _13`}>I</span>
             <span className={`${letterClass} _14`}>'m</span>
-            <AnimatedLetters letterClass={letterClass} strArray={firstNameArray} idx={15} />
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={firstNameArray}
+              idx={15}
+            />
             <br />
-            <AnimatedLetters letterClass={letterClass} strArray={lastNameArray} idx={15} />
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={lastNameArray}
+              idx={15}
+            />
             <br />
-            <AnimatedLetters letterClass={letterClass} strArray={jobArray} idx={22} />
+            <AnimatedLetters
+              letterClass={letterClass}
+              strArray={jobArray}
+              idx={22}
+            />
           </h1>
           <br />
           <h2>Frontend Developer/ Freelance Artist / Writer</h2>
@@ -59,12 +78,13 @@ const Home = () => {
             <FaReact className="tech-icon" /> ReactJS
             <DiJavascript className="tech-icon" /> ExpressJS
             <FaNodeJs className="tech-icon" /> NodeJS
+            <SiMongodb className="tech-icon" /> MongoDB
             <FaGitAlt className="tech-icon" /> Git
           </div>
 
           <h2>Currently Learning:</h2>
           <div className="current-learning">
-            <p>TypeScript</p>
+            <p>TypeScript, Figma, and More...</p>
           </div>
           <br />
           <Link to="/contact" className="flat-button">
@@ -75,7 +95,7 @@ const Home = () => {
       </div>
       <Loader type="pacman" />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

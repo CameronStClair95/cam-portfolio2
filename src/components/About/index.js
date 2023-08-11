@@ -8,6 +8,9 @@ import Loader from 'react-loaders'
 // Style imports
 import './index.scss'
 
+// CV file import
+import cvFile from '../../assets/images/Cameron_Aitcheson_Labarr_CV_2023.pdf'
+
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -22,18 +25,18 @@ import {
 const About = () => {
   const [animationState, setAnimationState] = useState('text-animate')
 
-  console.log("About component initialized"); // Initial log
+  console.log('About component initialized') // Initial log
 
   useEffect(() => {
-    console.log("useEffect triggered for animationState setup"); // Log when useEffect runs
+    console.log('useEffect triggered for animationState setup') // Log when useEffect runs
 
     const timer = setTimeout(() => {
-      console.log("Setting animationState to 'text-animate-hover'"); // Log before state change
+      console.log("Setting animationState to 'text-animate-hover'") // Log before state change
       setAnimationState('text-animate-hover')
     }, 3000)
 
     return () => {
-      console.log("Cleaning up timer"); // Log for cleanup
+      console.log('Cleaning up timer') // Log for cleanup
       clearTimeout(timer)
     }
   }, [])
@@ -47,7 +50,7 @@ const About = () => {
     { icon: faGitAlt, color: '#EC4D28' },
   ]
 
-  console.log("Rendering About component with animationState:", animationState); // Log during render
+  console.log('Rendering About component with animationState:', animationState) // Log during render
 
   return (
     <main className="container about-page">
@@ -61,33 +64,46 @@ const About = () => {
         </h1>
         <p>
           I am an ambitious Frontend Developer pivoting into the world of web
-          development, with a profound appreciation for the intricacies 
+          development, with a profound appreciation for the intricacies
           <br />
           and artistry inherent in web design. My aim is to craft impeccable and
-          aesthetically pleasing interfaces that not only cater to the 
+          aesthetically pleasing interfaces that not only cater to the
           <br />
-          user's desires but also elevate their online experience to new heights.
+          user's desires but also elevate their online experience to new
+          heights.
         </p>
         <br />
         <p>
-          At the core, I am an ever-eager scholar, perpetually driven by the allure of
-          the newest technological innovations and their potential applications in 
+          At the core, I am an ever-eager scholar, perpetually driven by the
+          allure of the newest technological innovations and their potential
+          applications in
           <br />
-          addressing tangible challenges. This unwavering quest for understanding propels me 
-          forward, continually expanding my horizons  
+          addressing tangible challenges. This unwavering quest for
+          understanding propels me forward, continually expanding my horizons
           <br />
-          and refining my toolkit, with a particular emphasis lately on UX/UI and Product Management.
+          and refining my toolkit, with a particular emphasis lately on UX/UI
+          and Product Management.
         </p>
         <br />
         <p>
-          If one were to encapsulate my essence in a succinct statement - I stand as a fervent advocate for technology, 
+          If one were to encapsulate my essence in a succinct statement - I
+          stand as a fervent advocate for technology,
           <br />
-          a devoted aficionado of melodies, a keen-eyed photographer, a spirited painter, and at heart, a truly curious person. My eclectic  
+          a devoted aficionado of melodies, a keen-eyed photographer, a spirited
+          painter, and at heart, a truly curious person. My eclectic
           <br />
-          range of passions ignites my imagination, providing a rich tapestry of perspectives that, I am confident, endows me with a distinct 
-          <br/>
+          range of passions ignites my imagination, providing a rich tapestry of
+          perspectives that, I am confident, endows me with a distinct
+          <br />
           edge in web design and the broader tech industry.
         </p>
+        <a
+          href={cvFile}
+          download="Cameron_Aitcheson_Labarr_CV_2023.pdf"
+          className="cv-download-button"
+        >
+          Download my CV
+        </a>
       </section>
 
       <section className="stage-cube-cont">

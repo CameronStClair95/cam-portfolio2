@@ -6,6 +6,7 @@
 
     @media (max-width: 600px) {
       flex-direction: column;
+      padding: 10px 0;
     }
 
     .text-zone {
@@ -16,7 +17,7 @@
 
       @media (max-width: 600px) {
         width: 100%;
-        padding: 1em;
+        padding: 1em 0.5em; // Reduced side padding
       }
 
       h1 {
@@ -27,35 +28,8 @@
         font-weight: 400;
 
         @media (max-width: 600px) {
-          font-size: 32px;
-        }
-
-        &::before,
-        &::after {
-          @media (max-width: 1000px) {
-            content: none;
-          }
-        }
-
-        &::before {
-          content: '<h1>';
-          font-family: 'La Belle Aurore';
-          color: #e85a4f;
-          font-size: 18px;
-          position: absolute;
-          margin-top: 25px;
-          left: -15px;
-          opacity: 0.6;
-        }
-
-        &::after {
-          content: '</h1>';
-          font-family: 'La Belle Aurore';
-          color: #e85a4f;
-          font-size: 18px;
-          margin-top: 10%;
-          right: -24px;
-          opacity: 0.6;
+          font-size: 28px; // Reduced font size a bit more
+          margin-top: 35px; // Reduced margin-top for h1
         }
       }
 
@@ -66,10 +40,10 @@
         font-size: 25px;
         font-family: 'Coolvetica';
         letter-spacing: 3px;
-        animation: fadeIn 1s 1.8s backwards;
 
         @media (max-width: 600px) {
           font-size: 20px;
+          margin-top: 15px; // Reduced margin
         }
       }
 
@@ -83,7 +57,6 @@
         padding: 10px 18px;
         border-radius: 5px;
         border: 1px solid #e98074;
-        animation: fadeIn 1s 1.8s backwards;
         white-space: nowrap;
         position: relative;
         top: -15px;
@@ -95,7 +68,7 @@
 
         @media (max-width: 600px) {
           display: block;
-          margin: 20px auto 0 auto;
+          margin: 10px auto 0 auto; // Reduced margin
           width: fit-content;
         }
       }
@@ -108,7 +81,7 @@
       grid-gap: 5px;
       align-items: center;
       font-size: 1.2em;
-      margin-bottom: 20px;
+      margin-bottom: 20px; // Reduced margin
 
       @media (max-width: 600px) {
         grid-template-columns: 1fr;
@@ -137,10 +110,12 @@
         color: #fff;
         outline: none;
         box-shadow: 0 0 5px #e98074;
+        position: static; // Reset the position
+        margin-top: 20px; // Add some space above the button
       }
 
       @media (max-width: 600px) {
-        padding: 12px 20px;
+        top: -45px !important;
       }
     }
   }
