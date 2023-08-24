@@ -2,6 +2,7 @@ import falloutQuizImg from '../assets/images/falloutQuizImg.png'
 import globeHopperImg from '../assets/images/globeHopperImg.png'
 import macArtsyImg from '../assets/images/macArtsyImg.png'
 import Jordan_Alexander from '../assets/images/Jordan_Alexander.png'
+import OmniFood from '../assets/images/OmniFood.png'
 
 export const portfolio = [
   {
@@ -32,5 +33,12 @@ export const portfolio = [
     description: 'HTML, CSS, and JavaScript',
     url: 'https://jordanalexander.netlify.app/',
     github: 'https://github.com/CameronStClair95/html-css-portfolio-jordan',
+  },
+  {
+    name: 'OmniFood',
+    img: OmniFood,
+    description: 'HTML, CSS, and JavaScript',
+    url: 'https://omnifood-cameron-a-l.netlify.app/',
+    github: 'https://github.com/CameronStClair95/Omnifood',
   },
 ]
