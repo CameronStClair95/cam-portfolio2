@@ -17,7 +17,7 @@
 
       @media (max-width: 600px) {
         width: 100%;
-        padding: 1em 0.5em; // Reduced side padding
+        padding: 1em 0.5em;
       }
 
       h1 {
@@ -28,8 +28,8 @@
         font-weight: 400;
 
         @media (max-width: 600px) {
-          font-size: 28px; // Reduced font size a bit more
-          margin-top: 35px; // Reduced margin-top for h1
+          font-size: 28px;
+          margin-top: 35px;
         }
       }
 
@@ -43,7 +43,7 @@
 
         @media (max-width: 600px) {
           font-size: 20px;
-          margin-top: 15px; // Reduced margin
+          margin-top: 15px;
         }
       }
 
@@ -60,16 +60,27 @@
         white-space: nowrap;
         position: relative;
         top: -15px;
+        transition: all 0.3s ease; // Smooth transition for all effects
 
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: #e98074;
           color: #fff;
+          outline: none;
+          box-shadow: 0 0 5px #e98074;
+          transform: translateY(-5px);
+        }
+
+        &:active {
+          transform: translateY(0);
+          box-shadow: 0 0 3px #e98074;
         }
 
         @media (max-width: 600px) {
           display: block;
-          margin: 10px auto 0 auto; // Reduced margin
+          margin: 10px auto 0 auto;
           width: fit-content;
+          top: -45px !important;
         }
       }
     }
@@ -81,7 +92,7 @@
       grid-gap: 5px;
       align-items: center;
       font-size: 1.2em;
-      margin-bottom: 20px; // Reduced margin
+      margin-bottom: 20px;
 
       @media (max-width: 600px) {
         grid-template-columns: 1fr;
@@ -100,22 +111,6 @@
     .profile-pic {
       @media (max-width: 1200px) {
         display: none;
-      }
-    }
-
-    .flat-button {
-      &:hover,
-      &:focus {
-        background-color: #e98074;
-        color: #fff;
-        outline: none;
-        box-shadow: 0 0 5px #e98074;
-        position: static; // Reset the position
-        margin-top: 20px; // Add some space above the button
-      }
-
-      @media (max-width: 600px) {
-        top: -45px !important;
       }
     }
   }
