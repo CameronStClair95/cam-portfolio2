@@ -109,6 +109,17 @@
     }
 
     .profile-pic {
+      border-radius: 50%; // Makes the image circular
+      width: 45rem; // Adjust the size as required
+      height: 45rem; // Adjust the size as required
+      object-fit: cover; // Ensures the image is scaled to cover the element without being stretched
+      // top: 0;
+      // left: 0;
+      right: 375px;
+      // bottom: 0;
+      margin: auto;
+      position: absolute;
+
       @media (max-width: 1200px) {
         display: none;
       }

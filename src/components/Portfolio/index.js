@@ -37,10 +37,11 @@ const Portfolio = () => {
       <div className="images-container">
         {portfolio.map((port, idx) => (
           <article className="portfolio-img-box" key={idx}>
-            <img src={port.img} className="portfolio-Image" alt={port.name} />
-            <div className="content">
+            <div className="portfolio-card-front">
+              <img src={port.img} className="portfolio-Image" alt={port.name} />
+            </div>
+            <div className="portfolio-card-back">
               <h3 className="name">{port.name}</h3>
-              <br />
               <p className="description">{port.description}</p>
               <button className="btn" onClick={() => handleViewClick(port)}>
                 View
@@ -62,7 +63,6 @@ const Portfolio = () => {
         />
       </h1>
       <h2 className="page-description">Web Development Projects</h2>
-      <br />
       <section>{renderPortfolio(portfolio)}</section>
       <Modal
         isOpen={isModalOpen}
@@ -76,9 +76,7 @@ const Portfolio = () => {
             </button>
             <img src={currentProject.img} alt={currentProject.name} />
             <h3>{currentProject.name}</h3>
-            <br />
             <p>{currentProject.description}</p>
-            <br />
             <button onClick={() => window.open(currentProject.url)}>
               View Project
             </button>

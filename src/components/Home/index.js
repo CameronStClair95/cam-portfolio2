@@ -68,7 +68,7 @@ const Home = () => {
             />
           </h1>
           <br />
-          <h2>Frontend Developer/ Freelance Artist / Writer</h2>
+          <h2>Frontend Developer</h2>
           <br />
           <h2>Techstack</h2>
           <div className="tech-stack">
