@@ -66,7 +66,7 @@ $accent-color: #e85a4f;
   flex: 1 1 20%;
   height: 400px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 10px !important;
   max-width: calc(25% - 10px);
 
   @media (max-width: 768px) {
@@ -105,8 +105,10 @@ $accent-color: #e85a4f;
       height: 210px;
       display: block;
       margin: auto;
-      border-bottom-left-radius: 10px; // adjust the value to your preference
-      border-bottom-right-radius: 10px; // adjust the value to your preference
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
     }
   }
 
