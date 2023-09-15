@@ -4,6 +4,8 @@ import OmniFood from '../assets/images/OmniFood.png'
 import Natours from '../assets/images/Natours.png'
 import KryptoImg from '../assets/images/KryptoImg.png'
 import Portfolioimg from '../assets/images/Portfolio-2-img.png'
+import Trilloimg from '../assets/images/Trillo-img.png'
+import Teslaimg from '../assets/images/Tesla-img.png'
 
 export const portfolio = [
   {
@@ -45,5 +47,19 @@ export const portfolio = [
     img: Portfolioimg,
     description: 'Figma (Adaptation of this portfolio)',
     url: 'https://www.figma.com/file/g2M1cHZvc6HlA9gAzBmgNp/Cam-Portfolio-Upgrade-Idea?type=design&node-id=0%3A1&mode=design&t=QFfb3Vpq9I49lWEW-1',
+  },
+  {
+    name: 'Trilllo',
+    img: Trilloimg,
+    description: 'SCSS, HTML, JS, Mainly Built with Flexbox',
+    url: 'https://trillo-cam.netlify.app/',
+    github: 'https://github.com/CameronStClair95/Trillo',
+  },
+  {
+    name: 'Tesla Clone',
+    img: Teslaimg,
+    description: 'Figma',
+    url: 'https://www.figma.com/file/MIfx0DmE5GRy9Y4NGILTgl/Tesla-Project-2023?type=design&node-id=30-41&mode=design&t=htqOTLpHIFsAVn7O-0',
+    github: '',
   },
 ]
