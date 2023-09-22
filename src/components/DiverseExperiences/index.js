@@ -16,7 +16,10 @@ const DiverseExperiences = () => {
             the vibrant world of tech, showcasing pivotal moments and invaluable
             lessons.
           </p>
-          <Link to="/journey" className="journey-button">
+          <Link
+            to="https://www.linkedin.com/in/cameron-aitcheson-labarr/"
+            className="journey-button"
+          >
             Click here to see my journey
           </Link>
         </div>
