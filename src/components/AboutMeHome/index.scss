@@ -2,6 +2,7 @@
 
 .about-me-section {
   @include container(); // Use the container mixin
+  color: $primary-color;
 
   h2 {
     font-size: 2rem;
@@ -34,6 +35,7 @@
     .right-content {
       flex: 1;
       @include padding(0, 0, 0, 6.5rem);
+      color: $primary-color;
 
       h2 {
         font-size: 3rem;
