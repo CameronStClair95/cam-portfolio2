@@ -1,4 +1,3 @@
-import './index.scss'
 import Loader from 'react-loaders'
 import Modal from 'react-modal'
 
