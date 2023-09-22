@@ -1,0 +1,119 @@
+@import '../../variables.scss';
+
+.about-me-section {
+  @include container(); // Use the container mixin
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-family: $epilogue-font;
+  }
+
+  .divider {
+    @include divider();
+  }
+
+  .content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+
+    .left-content {
+      flex: 1;
+      @include padding(0, 2rem, 0, 0);
+
+      p {
+        font-size: 2.2rem;
+        font-weight: 500;
+        line-height: 1.8;
+        font-family: $epilogue-font;
+        color: $primary-color;
+      }
+    }
+
+    .right-content {
+      flex: 1;
+      @include padding(0, 0, 0, 6.5rem);
+
+      h2 {
+        font-size: 3rem;
+        margin-bottom: 3rem;
+        font-family: $epilogue-font;
+      }
+
+      .service {
+        position: relative;
+        margin-bottom: 5rem;
+        width: 100%;
+
+        .service-title {
+          font-size: 2rem;
+          font-weight: 450;
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid $primary-color;
+          box-sizing: border-box;
+          flex-grow: 1;
+          padding-bottom: 1rem;
+          font-family: $epilogue-font;
+
+          .circle {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 1.5px solid $primary-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $secondary-color;
+            color: $primary-color;
+            margin-right: 1rem;
+          }
+
+          .arrow {
+            position: absolute;
+            right: 0;
+            bottom: -1;
+            transform: translateY(-50%);
+          }
+        }
+
+        p {
+          display: block;
+          margin-top: 1.5rem;
+          margin-left: 3.5rem;
+          font-size: 1.7rem;
+          font-weight: 400;
+          max-width: 80%;
+          transition: max-height 0.3s ease-in-out, visibility 0.3s ease-in-out;
+          font-family: $epilogue-font;
+
+          &.show {
+            max-height: 200px;
+            visibility: visible;
+          }
+        }
+      }
+    }
+
+    // Applying responsive adjustments:
+    @include mobile {
+      flex-direction: column;
+
+      .left-content,
+      .right-content {
+        @include padding(0);
+        width: 100%;
+      }
+    }
+
+    @include tablet {
+      flex-direction: row;
+
+      .left-content,
+      .right-content {
+        width: 50%;
+      }
+    }
+  }
+}

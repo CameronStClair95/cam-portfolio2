@@ -1,26 +1,19 @@
-import React, { useState, useEffect } from 'react'
-import Loader from 'react-loaders'
+import React, { useState } from 'react'
 import Modal from 'react-modal'
+import Masonry from 'react-masonry-css'
 import './index.scss'
-import AnimatedLetters from '../AnimatedLetters'
 import { portfolio } from '../../data/portfolioData'
+
+// Import the separated components
+import SayHello from '../SayHello/index'
+import Footer from '../Footer/index'
+import Testimonials from '../Testimonials/index'
 
 Modal.setAppElement('#root')
 
 const Portfolio = () => {
-  const [letterClass, setLetterClass] = useState('text-animate')
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [currentProject, setCurrentProject] = useState(null)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLetterClass('text-animate-hover')
-    }, 3000)
-
-    return () => {
-      clearTimeout(timer)
-    }
-  }, [])
 
   const handleViewClick = (project) => {
     setCurrentProject(project)
@@ -32,38 +25,33 @@ const Portfolio = () => {
     setCurrentProject(null)
   }
 
-  const renderPortfolio = (portfolio) => {
-    return (
-      <div className="images-container">
-        {portfolio.map((port, idx) => (
-          <article className="portfolio-img-box" key={idx}>
-            <div className="portfolio-card-front">
-              <img src={port.img} className="portfolio-Image" alt={port.name} />
-            </div>
-            <div className="portfolio-card-back">
-              <h3 className="name">{port.name}</h3>
-              <p className="description">{port.description}</p>
-              <button className="btn" onClick={() => handleViewClick(port)}>
-                View
-              </button>
-            </div>
-          </article>
-        ))}
-      </div>
-    )
+  const breakpointColumnsObj = {
+    default: 4,
+    1100: 3,
+    700: 2,
+    500: 1,
   }
 
   return (
-    <main className="container portfolio-page">
-      <h1 className="page-title">
-        <AnimatedLetters
-          letterClass={letterClass}
-          idx={15}
-          strArray={'Portfolio'.split('')}
-        />
-      </h1>
-      <h2 className="page-description">Web Development Projects</h2>
-      <section>{renderPortfolio(portfolio)}</section>
+    <main className="portfolio-container">
+      <h1 className="title">My Portfolio</h1>
+      <div className="divider"></div>
+      <h2 className="subtitle">Web Development Projects</h2>
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="portfolio-grid"
+        columnClassName="portfolio-grid_column"
+      >
+        {portfolio.map((port, idx) => (
+          <div
+            key={idx}
+            className="portfolio-item"
+            onClick={() => handleViewClick(port)}
+          >
+            <img src={port.img} alt={port.name} className="portfolio-image" />
+          </div>
+        ))}
+      </Masonry>
       <Modal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
@@ -77,18 +65,28 @@ const Portfolio = () => {
             <img src={currentProject.img} alt={currentProject.name} />
             <h3>{currentProject.name}</h3>
             <p>{currentProject.description}</p>
-            <button onClick={() => window.open(currentProject.url)}>
-              View Project
-            </button>
-            {currentProject.github && (
-              <button onClick={() => window.open(currentProject.github)}>
-                View on GitHub
+            <div className="buttons-container">
+              <button
+                className="project-button"
+                onClick={() => window.open(currentProject.url)}
+              >
+                View Project
               </button>
-            )}
+              {currentProject.github && (
+                <button
+                  className="github-button"
+                  onClick={() => window.open(currentProject.github)}
+                >
+                  View on GitHub
+                </button>
+              )}
+            </div>
           </>
         )}
       </Modal>
-      <Loader type="pacman" />
+      <SayHello />
+      <Testimonials />
+      <Footer />
     </main>
   )
 }

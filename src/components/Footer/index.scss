@@ -1,0 +1,67 @@
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  flex-wrap: wrap; // This ensures that items go to the next row if they don't fit
+
+  .divider {
+    height: 2px;
+    background-color: #000;
+    width: 100vw; // This makes it span the entire viewport width
+    margin-bottom: 20px;
+    position: relative;
+    left: 50%; // Centers the divider
+    transform: translateX(-50%); // Used for centering
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border: 2px solid #000;
+    width: 7.5rem;
+    height: 5rem;
+    padding: 10px;
+
+    .initials {
+      font-size: 2.4rem;
+      font-family: Epilogue, sans-serif;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      color: #000;
+    }
+  }
+
+  .copyright-text {
+    font-size: 16px;
+    text-align: center;
+    font-family: Epilogue, sans-serif;
+    flex: 1; // This ensures it occupies any available space, effectively centering the text
+    text-align: center; // Centers the text in its container
+  }
+
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    // Help me to change the actual size of the icons
+    font-size: 2.3rem;
+
+    a {
+      color: #000;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #555;
+      }
+    }
+  }
+}

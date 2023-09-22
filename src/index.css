@@ -1,26 +1,13 @@
-html{
+html {
   font-size: 62.5%;
 }
 
 body {
   margin: 0;
-  font: 300 11px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 300 11px/1.4 Epilogue, sans-serif;
   color: #444;
-  background: #EAE7DC;
-  overflow: hidden;
+  background: #fff;
   display: block;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-
-
-/* 
-#EAE7DC
-#D8C3A5
-#8E8D8A
-#e98074
-#e85a4f
-
-
-*/

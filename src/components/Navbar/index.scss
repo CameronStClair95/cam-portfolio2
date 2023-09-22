@@ -1,0 +1,83 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  z-index: 10; // Raised z-index to ensure it's above other content
+  position: sticky; // This makes it sticky
+  top: 0; // Stick to the top
+
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border-top-left-radius: 25%;
+    border-bottom-left-radius: 25%;
+    border-top-right-radius: 25%;
+    border-bottom-right-radius: 25%;
+    border: 2px solid #000;
+    width: 7.5rem;
+    height: 5rem;
+    padding: 10px;
+
+    .initials {
+      font-size: 2.4rem;
+      font-family: Epilogue, sans-serif;
+      font-weight: 500;
+      margin: 0;
+      padding: 0;
+      color: #000;
+    }
+  }
+
+  nav {
+    background: #fff;
+
+    a {
+      font-size: 16px;
+      margin: 0 10px;
+      text-decoration: none;
+      position: relative;
+      font-family: Epilogue, sans-serif;
+      background-color: #fff;
+      transition: text-decoration 0.3s ease;
+      color: #000;
+      cursor: pointer;
+
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+
+      &.active {
+        text-decoration: underline;
+      }
+
+      &::after {
+        content: attr(data-label);
+        font-size: 14px;
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+        }
+      }
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+}
