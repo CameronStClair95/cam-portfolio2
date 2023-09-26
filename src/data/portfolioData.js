@@ -5,6 +5,7 @@ import Natours from '../assets/images/Natours.png'
 import Portfolioimg from '../assets/images/Portfolio.png'
 import Trilloimg from '../assets/images/Trillo-img.png'
 import Teslaimg from '../assets/images/Tesla-img.png'
+import ProYogaBuddy from '../assets/images/ProYogaBuddy.png'
 
 export const portfolio = [
   {
@@ -53,6 +54,13 @@ export const portfolio = [
     img: Teslaimg,
     description: 'Figma',
     url: 'https://www.figma.com/file/MIfx0DmE5GRy9Y4NGILTgl/Tesla-Project-2023?type=design&node-id=30-41&mode=design&t=htqOTLpHIFsAVn7O-0',
+    github: '',
+  },
+  {
+    name: 'ProYoga Buddy',
+    img: ProYogaBuddy,
+    description: 'Figma (In Progress)',
+    url: 'https://www.figma.com/file/U9rs7E2w3XmQ6UDHUyRIRO/Untitled?type=design&node-id=4%3A128&mode=design&t=VwTavpKsfFdVGNyq-1',
     github: '',
   },
 ]
