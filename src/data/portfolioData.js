@@ -6,6 +6,7 @@ import Portfolioimg from '../assets/images/Portfolio.png'
 import Trilloimg from '../assets/images/Trillo-img.png'
 import Teslaimg from '../assets/images/Tesla-img.png'
 import ProYogaBuddy from '../assets/images/ProYogaBuddy.png'
+import HotelBookingApp from '../assets/images/HotelBookingApp.png'
 
 export const portfolio = [
   {
@@ -61,6 +62,13 @@ export const portfolio = [
     img: ProYogaBuddy,
     description: 'Figma (In Progress)',
     url: 'https://www.figma.com/file/U9rs7E2w3XmQ6UDHUyRIRO/Untitled?type=design&node-id=4%3A128&mode=design&t=VwTavpKsfFdVGNyq-1',
+    github: '',
+  },
+  {
+    name: 'Hotel Booking App',
+    img: HotelBookingApp,
+    description: 'Figma - WireFrames = Interactive Prototyp (In Progress)',
+    url: 'https://www.figma.com/file/V5xYOv51Aw96xn7YaZilMq/Hotel-Booking-App?type=design&t=Cj9W4RDs6GZAGC9m-6',
     github: '',
   },
 ]
